@@ -1,5 +1,5 @@
-import Navbar from '../sniffs/Navbar';
-import Hero from '../sniffs/Hero';
+import Navbar from '../components/Navbar';
+import Hero from '../components/Hero';
 
 
 export default function Home() {
