@@ -1,13 +1,12 @@
-import { useEffect } from 'react';
+import { ThemeProvider } from '../components/ThemeProvider';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-	// Apply the dark theme by default
-	document.documentElement.classList.add('dark');
-  }, []);
-
-  return <Component {...pageProps} />;
+  return (
+    <ThemeProvider>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
 
 export default MyApp;

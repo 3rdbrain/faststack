@@ -25,7 +25,7 @@ export default function Hero() {
                     <span className="block text-indigo-600 xl:inline">Launch Faster...</span>
                   </h1>
                   <p className="mt-3 text-base text-gray-500 dark:text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                    The Ultimate FastAPI & Next.js Boilerplate for Web Apps, SaaS, and AI Projects.
+                  Meet Your Pet's New Best Friend!.
                   </p>
                   <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                     <div className="rounded-md shadow">
@@ -47,7 +47,7 @@ export default function Hero() {
                 <div className="mt-12 lg:mt-0 lg:flex lg:items-center">
                   <img
                     className="mx-auto lg:max-w-lg"
-                    src="/integration.png"
+                    src="/hero_pet.png"
                     alt="Product Image"
                   />
                 </div>

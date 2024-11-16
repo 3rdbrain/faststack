@@ -3,7 +3,7 @@ import httpx
 from fastapi import HTTPException
 
 async def geocode_address(address: str):
-    api_key = os.getenv('YOUR_GOOGLE_MAPS_API_KEY')
+    api_key = os.getenv('REACT_APP_GOOGLE_MAPS_API_KEY')
     if not api_key:
         raise HTTPException(status_code=500, detail="Google Maps API key not found")
 
@@ -25,7 +25,7 @@ async def geocode_address(address: str):
         raise HTTPException(status_code=500, detail=f"An unexpected error occurred: {str(e)}")
     
 async def async_geocode_address(address: str):
-    api_key = os.getenv('YOUR_GOOGLE_MAPS_API_KEY')
+    api_key = os.getenv('REACT_APP_GOOGLE_MAPS_API_KEY')
     if not api_key:
         raise HTTPException(status_code=500, detail="Google Maps API key not found")
 
@@ -48,4 +48,4 @@ async def async_geocode_address(address: str):
 
 # Helper function for reverse geocoding (optional)
 async def reverse_geocode(lat: float, lng: float):
-    url = f"https://maps.googleapis.com/maps/api/geocode/json?latlng={lat},{lng}&key={os.getenv('YOUR_GOOGLE_MAPS_API_KEY')}"
+    url = f"https://maps.googleapis.com/maps/api/geocode/json?latlng={lat},{lng}&key={os.getenv('REACT_APP_GOOGLE_MAPS_API_KEY')}"
