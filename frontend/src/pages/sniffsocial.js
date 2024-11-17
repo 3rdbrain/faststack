@@ -103,34 +103,31 @@ export default function SniffSocial() {
     <div className="flex flex-col h-screen bg-gray-100">
       {/* Navbar */}
       <nav className="bg-white shadow-lg p-4 flex justify-between items-center">
-        <div className="flex items-center">
-          <img src="/dashboardpet.png" alt="Logo" className="h-8 w-8 mr-2" />
-          <span className="text-xl font-bold text-gray-900">SniffSocial</span>
+        <div className="flex-1 flex justify-center">
+          <span className="text-xl font-bold text-gray-900">SniffSocials</span>
         </div>
         <button className="btn btn-secondary">Logout</button>
       </nav>
 
       <div className="flex flex-1">
-        {/* Sidebar */}
+        {/* Left Column */}
         <div className="w-1/4 bg-white p-6 shadow-lg overflow-y-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">User Information</h2>
           <div className="mb-6">
-            <p className="text-lg font-semibold text-gray-900">Name: {user.name}</p>
-            <p className="text-lg font-semibold text-gray-900">Email: {user.email}</p>
-            <h3 className="text-xl font-bold text-gray-900 mt-6">My Pets</h3>
-            <div className="grid grid-cols-1 gap-4">
-              {user.pets.map((pet, index) => (
-                <div key={index} className="p-4 border rounded-lg shadow-sm bg-gray-50">
-                  <img src={pet.imageUrl} alt={pet.name} className="w-full h-32 object-cover rounded-lg mb-2" />
-                  <p className="text-lg font-semibold text-gray-900">{pet.name}</p>
-                  <p className="text-sm text-gray-600">Species: {pet.species}</p>
-                  <p className="text-sm text-gray-600">Age: {pet.age}</p>
-                </div>
-              ))}
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Upcoming Dates</h2>
+            <div className="p-4 border rounded-lg shadow-sm bg-gray-50">
+              {/* Add content for upcoming dates */}
+              <p>No upcoming dates.</p>
             </div>
           </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Search Nearby Pets</h2>
           <div className="mb-6">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Pet Playdates</h2>
+            <div className="p-4 border rounded-lg shadow-sm bg-gray-50">
+              {/* Add content for pet playdates */}
+              <p>No pet playdates scheduled.</p>
+            </div>
+          </div>
+          <div className="mb-6">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">Search Nearby Pets</h2>
             <input
               type="text"
               placeholder="Enter address..."
@@ -148,24 +145,24 @@ export default function SniffSocial() {
             <button className="btn btn-primary w-full" onClick={handleSearch}>
               Search
             </button>
+            {error && (
+              <div className="alert alert-error mt-4">
+                <div className="flex-1">
+                  <label>{error}</label>
+                </div>
+              </div>
+            )}
+            {loading && (
+              <div className="flex items-center justify-center mt-4">
+                <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            )}
           </div>
-          {error && (
-            <div className="alert alert-error mb-6">
-              <div className="flex-1">
-                <label>{error}</label>
-              </div>
-            </div>
-          )}
-          {loading && (
-            <div className="flex items-center justify-center">
-              <div className="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full" role="status">
-                <span className="visually-hidden">Loading...</span>
-              </div>
-            </div>
-          )}
         </div>
 
-        {/* Main Content */}
+        {/* Center Column */}
         <div className="flex-1 p-4">
           <LoadScript googleMapsApiKey={"AIzaSyCeyf_gkJR7zbSbcGMYzx_BZOPF1p0VWrU"}>
             <GoogleMap
@@ -198,6 +195,23 @@ export default function SniffSocial() {
               )}
             </GoogleMap>
           </LoadScript>
+        </div>
+
+        {/* Right Column */}
+        <div className="w-1/4 bg-white p-6 shadow-lg overflow-y-auto">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Selected Pet Details</h2>
+          {selectedMarker ? (
+            <div className="p-4 border rounded-lg shadow-sm bg-gray-50">
+              <img src={selectedMarker.imageUrl} alt={selectedMarker.name} className="w-full h-32 object-cover rounded-lg mb-2" />
+              <h3 className="text-lg font-bold">{selectedMarker.name}</h3>
+              <p>Species: {selectedMarker.species}</p>
+              <p>Age: {selectedMarker.age}</p>
+              <p>Owner: {selectedMarker.owner_email}</p>
+              <p>Address: {selectedMarker.address}</p>
+            </div>
+          ) : (
+            <p>No pet selected.</p>
+          )}
         </div>
       </div>
     </div>
