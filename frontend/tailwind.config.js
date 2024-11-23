@@ -10,6 +10,22 @@ module.exports = {
     require('daisyui'),
   ],
   daisyui: {
-    themes: ['light', 'dark'], // Add or customize themes here
+    themes: [
+      'light', 
+      'dark',
+      {
+        lightblue: {
+          primary: '#3b82f6', // Blue
+          secondary: '#60a5fa', // Light Blue
+          accent: '#bfdbfe', // Very Light Blue
+          neutral: '#1e3a8a', // Dark Blue
+          'base-100': '#e0f2fe', // Light Blue Background
+          info: '#38bdf8', // Info Blue
+          success: '#34d399', // Success Green
+          warning: '#fbbf24', // Warning Yellow
+          error: '#f87171', // Error Red
+        },
+      },
+    ],
   },
 };
