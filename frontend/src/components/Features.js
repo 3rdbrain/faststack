@@ -1,58 +1,45 @@
-import { useEffect } from 'react';
-import { useTheme } from './ThemeProvider'; // Import useTheme
+'use client';
 
-export default function Features() {
-  const { theme } = useTheme(); // Use useTheme hook
+import { Rocket, Shield, Database, Zap } from 'lucide-react';
 
-  useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [theme]);
+const features = [
+  {
+    name: 'Production Ready',
+    description: 'Authentication, database setup, and Docker configuration included.',
+    icon: Rocket,
+  },
+  {
+    name: 'Best Practices Built-in',
+    description: 'Security, testing, and documentation configured out of the box.',
+    icon: Shield,
+  },
+  {
+    name: 'Instant Integration',
+    description: 'Pre-built templates for popular frameworks and use cases.',
+    icon: Zap,
+  },
+  {
+    name: 'Database Ready',
+    description: 'Choose PostgreSQL or MongoDB with ORM setup and migrations.',
+    icon: Database,
+  },
+];
 
-  const features = [
-    {
-      title: 'Launch Your App With <span className="text-indigo-600">Lighting Speed</span>',
-      description: 'Get your landing page with login & CTAs, Email Notifications, Styling, SEO & more. Spend your time building your startup, not integrating APIs.',
-      imageUrl: '/pet_feature1.png',
-    },
-    {
-      title: 'Scale Effortlessly',
-      description: 'Our platform is built to scale with your business. Easily add new features and handle increased traffic without breaking a sweat.',
-      imageUrl: '/pet_feature2.png',
-    },
-    // Add more features as needed
-  ];
-
+export function FeaturesSection() {
   return (
-    <div id="features" className="relative bg-gray-100 dark:bg-gray-800 overflow-hidden py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-extrabold text-gray-900 dark:text-gray-100 sm:text-5xl">
-              How It Works
-            </h2>
-            <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
-              Playdates Made Easy
-            </p>
-          </div>
-          <div className="grid lg:grid-cols-2 gap-12">
-            {features.map((feature, index) => (
-              <div key={index} className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8 flex flex-col lg:flex-row items-center">
-                <img src={feature.imageUrl} alt={feature.title} className="w-40 h-40 rounded-full mb-6 lg:mb-0 lg:mr-8" />
-                <div>
-                  <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-100" dangerouslySetInnerHTML={{ __html: feature.title }}></h3>
-                  <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+    <section id="features" className="features-section text-center">
+      <div className="container mx-auto px-4 py-16">
+        <h2 className="text-4xl font-bold mb-8">Features</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature) => (
+            <div key={feature.name} className="feature-item p-6 bg-white rounded-lg shadow-md">
+              <feature.icon className="h-10 w-10 text-blue-500 mb-4 mx-auto" />
+              <h3 className="text-2xl font-semibold mb-2">{feature.name}</h3>
+              <p className="text-lg text-gray-600 mb-4">{feature.description}</p>
+            </div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
