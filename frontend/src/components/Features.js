@@ -20,7 +20,7 @@ const features = [
   },
   {
     name: 'Database Ready',
-    description: 'Choose PostgreSQL or MongoDB with ORM setup and migrations.',
+    description: 'Choose Supabase or MongoDB with ORM setup and migrations.',
     icon: Database,
   },
 ];

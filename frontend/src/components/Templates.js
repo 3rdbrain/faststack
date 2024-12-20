@@ -18,7 +18,7 @@ const templates = [
   {
     title: 'Full-Stack Web App',
     description: 'Complete web application setup',
-    stack: ['Next.js', 'FastAPI', 'MongoDB'],
+    stack: ['Next.js', 'FastAPI', 'MongoDB', 'Supabase'],
     icon: Globe,
   },
 ];
@@ -28,6 +28,9 @@ export function TemplatesSection() {
     <section id="templates" className="templates-section text-center bg-gray-50 py-16">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-12 text-gray-800">Templates</h2>
+        <p className="text-lg text-gray-600 mb-8">
+          Explore the ready-to-use templates available on GitHub. Clone, customize, and deploy your projects with ease.
+        </p>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {templates.map((template) => (
             <div key={template.title} className="p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
