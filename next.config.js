@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Specify the custom src directory
   experimental: {
     appDir: true,
   },
@@ -11,21 +10,21 @@ const nextConfig = {
         destination:
           process.env.NODE_ENV === "production"
             ? "http://127.0.0.1:8000/backend/py/:path*"
-            : "/api/",
+            : "http://127.0.0.1:8000/backend/py/:path*",
       },
       {
         source: "/docs",
         destination:
           process.env.NODE_ENV === "production"
             ? "http://127.0.0.1:8000/backend/py/docs"
-            : "/backend/py/docs",
+            : "http://127.0.0.1:8000/backend/py/docs",
       },
       {
         source: "/openapi.json",
         destination:
           process.env.NODE_ENV === "production"
             ? "http://127.0.0.1:8000/backend/py/openapi.json"
-            : "/backend/py/openapi.json",
+            : "http://127.0.0.1:8000/backend/py/openapi.json",
       },
     ];
   },
