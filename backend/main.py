@@ -7,7 +7,6 @@ from .schema.schemas import list_cta_serial
 from mangum import Mangum
 
 app = FastAPI()
-router = APIRouter()
 
 app.add_middleware(
     CORSMiddleware,
@@ -38,5 +37,4 @@ async def create_customer(details: CustomerDetails):
 async def read_root():
     return {"message": "Hello World"}
 
-app.include_router(router)
 handler = Mangum(app)
