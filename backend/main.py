@@ -17,15 +17,8 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 
-@app.get("/allcustomers")
-async def get_all_customers():
-    try:
-        customers = collection.find()
-        return list_cta_serial(customers)
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"An error occurred: {e}")
 
-@app.post("/newcustomers")
+@app.post("/api/newcustomers")
 async def create_customer(details: CustomerDetails):
     try:
         result = collection.insert_one(details.model_dump())
