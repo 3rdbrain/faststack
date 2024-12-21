@@ -37,3 +37,6 @@ async def create_customer(details: CustomerDetails):
 
 handler = Mangum(app)
 
+
+
+
