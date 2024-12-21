@@ -1,21 +1,13 @@
 {
-  "name": "your-project-name",
+  "name": "frontend",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
   "dependencies": {
-    "@chakra-ui/react": "^2.8.2",
-    "@emotion/react": "^11.13.0",
-    "@emotion/styled": "^11.13.0",
-    "@headlessui/react": "^2.1.3",
-    "@heroicons/react": "^2.1.5",
     "@radix-ui/react-slot": "^1.1.1",
-    "@stripe/react-stripe-js": "^2.7.3",
-    "@stripe/stripe-js": "^4.1.0",
     "class-variance-authority": "^0.7.1",
     "daisyui": "^4.12.22",
     "dotenv": "^16.4.7",

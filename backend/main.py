@@ -9,7 +9,6 @@ from mangum import Mangum
 
 app = FastAPI()
 
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Allows all origins
@@ -34,9 +33,6 @@ async def create_customer(details: CustomerDetails):
     
     except Exception as e:
         return HTTPException(status_code=500, detail=f"An error occurred: {e}")
-
+      
 handler = Mangum(app)
-
-
-
 
