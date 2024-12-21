@@ -1,10 +1,7 @@
-pyairtable
-fastapi
+fastapi==0.115.6
+mangum==0.19.0
 pydantic
 dotenv
 requests
 pymongo[srv]
 fastapi-cors
-googlemaps
-geopy
-
