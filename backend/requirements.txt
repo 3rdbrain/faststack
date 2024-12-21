@@ -1,10 +1,7 @@
-pyairtable
-fastapi
-pydantic
-dotenv
-requests
-pymongo[srv]
-fastapi-cors
-googlemaps
-geopy
-
+fastapi==0.95.2
+pydantic==1.10.2
+python-dotenv==0.21.0
+requests==2.28.1
+pymongo[srv]==4.3.3
+fastapi-cors==0.4.0
+mangum==0.14.0
