@@ -6,8 +6,9 @@ from .config.mongodb import collection
 from .schema.schemas import list_cta_serial
 from mangum import Mangum
 
+
 app = FastAPI()
-router = APIRouter()
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -34,6 +35,5 @@ async def create_customer(details: CustomerDetails):
     except Exception as e:
         return HTTPException(status_code=500, detail=f"An error occurred: {e}")
 
-app.include_router(router)
-
 handler = Mangum(app)
+
