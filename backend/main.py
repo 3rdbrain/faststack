@@ -34,7 +34,9 @@ async def create_customer(details: CustomerDetails):
     except Exception as e:
         return HTTPException(status_code=500, detail=f"An error occurred: {e}")
 
+@app.get("/api/hello")
+async def read_root():
+    return {"message": "Hello World"}
+
 app.include_router(router)
 handler = Mangum(app)
-
-
