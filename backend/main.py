@@ -1,7 +1,8 @@
+#import os
 from fastapi import FastAPI, HTTPException, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
-from .models.cta import CustomerDetails
-from .config.mongodb import collection
+from backend.models.cta import CustomerDetails
+from backend.config.mongodb import collection
 
 router = APIRouter()
 app = FastAPI()
