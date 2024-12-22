@@ -21,7 +21,7 @@ export function SignUpSection() {
     setError('');
 
     try {
-      const response = await fetch('/api/newcustomers', {
+      const response = await fetch('https://faststack-backend.onrender.com/api/newcustomers', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
