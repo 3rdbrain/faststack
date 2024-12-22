@@ -2,7 +2,6 @@ from fastapi import FastAPI, HTTPException, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
 from .models.cta import CustomerDetails
 from .config.mongodb import collection
-from mangum import Mangum
 
 router = APIRouter()
 app = FastAPI()
@@ -30,5 +29,4 @@ async def read_root():
     return {"message": "Hello World"}
 
 app.include_router(router)   
-handler = Mangum(app)
 
