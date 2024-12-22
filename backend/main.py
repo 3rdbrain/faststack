@@ -1,12 +1,10 @@
-from fastapi import FastAPI, HTTPException, Depends, status, APIRouter
+from fastapi import FastAPI, HTTPException, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.security import OAuth2PasswordBearer
 from .models.cta import CustomerDetails
 from .config.mongodb import collection
-from .schema.schemas import list_cta_serial
-from mangum import Mangum
+#from mangum import Mangum
 
-
+router = APIRouter()
 app = FastAPI()
 
 app.add_middleware(
@@ -30,6 +28,7 @@ async def create_customer(details: CustomerDetails):
 @app.get("/api/hello")
 async def read_root():
     return {"message": "Hello World"}
-      
-handler = Mangum(app)
+
+app.include_router(router)   
+#handler = Mangum(app)
 

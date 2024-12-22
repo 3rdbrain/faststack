@@ -21,7 +21,7 @@ export function SignUpSection() {
     setError('');
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/newcustomers', {
+      const response = await fetch('http://127.0.0.1:8000/api/newcustomers', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
