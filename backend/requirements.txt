@@ -1,9 +1,7 @@
-fastapi
-fastapi_cors
+fastapi[all]
 pydantic
 python-dotenv
 requests
 pymongo
 motor
-fastapi-cors
 urllib3
