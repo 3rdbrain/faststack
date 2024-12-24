@@ -1,11 +1,11 @@
-'use client';
-
+import React from 'react';
+import styles from './HeroSection.module.css';
 import { ArrowRight } from 'lucide-react';
 import { SiNextdotjs, SiTailwindcss, SiStripe, SiSupabase } from 'react-icons/si';
 
-export function HeroSection() {
+const HeroSection = () => {
   return (
-    <div className="relative overflow-hidden bg-background">
+    <div className={styles.background}>
       <div className="mx-auto max-w-7xl px-6 pt-10 sm:pt-16 lg:pt-20 lg:px-8 lg:pb-24">
         <div className="flex flex-col items-center text-center lg:text-left lg:flex-row lg:justify-between w-full">
           <div className="max-w-2xl lg:max-w-xl lg:pt-8 flex-1">
@@ -17,7 +17,10 @@ export function HeroSection() {
               database setup, and best practices - ready for production.
             </p>
             <div className="mt-8 flex justify-center lg:justify-start gap-x-6">
-              <a href="#waitlist" className="btn btn-primary btn-lg">
+              <a 
+                href="#waitlist" 
+                className="inline-flex items-center px-6 py-3 text-base font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg"
+              >
                 Join Waitlist <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </div>
@@ -43,29 +46,27 @@ npx create-fastapi-app my-api
         <div className="mt-20 text-center w-full">
           <h2 className="text-3xl font-bold text-foreground">Based on cutting edge technologies</h2>
           <div className="mt-8 flex justify-center space-x-8">
-            <div className="flex flex-col items-center">
-              <SiNextdotjs className="h-12 w-12 text-gray-800" />
-              <span className="mt-2 text-sm text-foreground">Next.js</span>
-            </div>
+            <TechIcon Icon={SiNextdotjs} name="Next.js" className="text-gray-800" />
             <div className="flex flex-col items-center">
               <span className="h-12 w-12 text-green-500 text-2xl font-bold flex items-center">FastAPI</span>
               <span className="mt-2 text-sm text-foreground">FastAPI</span>
             </div>
-            <div className="flex flex-col items-center">
-              <SiTailwindcss className="h-12 w-12 text-blue-500" />
-              <span className="mt-2 text-sm text-foreground">Tailwind CSS</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <SiStripe className="h-12 w-12 text-indigo-600" />
-              <span className="mt-2 text-sm text-foreground">Stripe</span>
-            </div>
-            <div className="flex flex-col items-center">
-              <SiSupabase className="h-12 w-12 text-green-600" />
-              <span className="mt-2 text-sm text-foreground">Supabase</span>
-            </div>
+            <TechIcon Icon={SiTailwindcss} name="Tailwind CSS" className="text-blue-500" />
+            <TechIcon Icon={SiStripe} name="Stripe" className="text-indigo-600" />
+            <TechIcon Icon={SiSupabase} name="Supabase" className="text-green-600" />
           </div>
         </div>
       </div>
     </div>
   );
 }
+
+// Helper component for tech icons
+const TechIcon = ({ Icon, name, className }) => (
+  <div className="flex flex-col items-center">
+    <Icon className={`h-12 w-12 ${className}`} />
+    <span className="mt-2 text-sm text-foreground">{name}</span>
+  </div>
+);
+
+export default HeroSection;

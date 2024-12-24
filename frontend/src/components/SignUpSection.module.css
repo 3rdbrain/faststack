@@ -1,0 +1,35 @@
+.signupSection {
+  padding: 2rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  max-width: 600px; /* Add max-width to constrain the form size */
+  margin: 0 auto; /* Center the form */
+  padding: 1rem; /* Add padding for better spacing */
+  background-color: #f9f9f9; /* Add background color for better visibility */
+  border-radius: 0.5rem; /* Add border radius for rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media (max-width: 600px) {
+  .signupSection {
+    padding: 1rem;
+  }
+
+  .form {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

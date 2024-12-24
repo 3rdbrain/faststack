@@ -1,21 +1,25 @@
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 
-import { HeroSection } from '@/components/Hero';
-import { FeaturesSection } from '@/components/Features';
-import { TemplatesSection } from '@/components/Templates';
-import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
-import { SignUpSection } from '@/components/SignUpSection';
+import React from 'react';
+import Header from '../components/Header';
+import HeroSection from '../components/HeroSection';
+import FeaturesSection from '../components/FeaturesSection';
+import TemplatesSection from '../components/TemplatesSection';
+import SignUpSection from '../components/SignUpSection';
+import Footer from '../components/Footer';
 
-export default function Home() {
+const HomePage = () => {
   return (
-    <main>
+    <div>
       <Header />
       <HeroSection />
       <FeaturesSection />
       <TemplatesSection />
       <SignUpSection />
       <Footer />
-    </main>
+    </div>
   );
-}
+};
+
+export default HomePage;

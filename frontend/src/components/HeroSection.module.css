@@ -1,0 +1,100 @@
+.background {
+    background-color: var(--background);
+  }
+  
+  @media (max-width: 768px) {
+    .background {
+      padding: 1rem;
+    }
+  
+    .hero-content {
+      margin-bottom: 1rem;
+    }
+  
+    .hero-button {
+      font-size: 0.875rem;
+    }
+  
+    .code-container {
+      padding: 0.5rem;
+    }
+  
+    .code-block {
+      font-size: 0.875rem;
+    }
+  }
+
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f4f4f4;
+}
+
+.hero-content {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  margin-top: 1rem;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s;
+}
+
+.hero-button:hover {
+  background-color: #0056b3;
+}
+
+.hero-code {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.code-container {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.code-block {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 1rem;
+  }
+
+  .hero-content {
+    margin-bottom: 1rem;
+  }
+
+  .hero-button {
+    font-size: 0.875rem;
+  }
+
+  .code-container {
+    padding: 0.5rem;
+  }
+
+  .code-block {
+    font-size: 0.875rem;
+  }
+}

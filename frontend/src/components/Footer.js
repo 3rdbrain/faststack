@@ -1,3 +1,5 @@
+import React from 'react';
+import styles from './Footer.module.css';
 import { Code2, Github, Twitter } from 'lucide-react';
 import Link from 'next/link';
 
@@ -14,7 +16,7 @@ const socialLinks = [
   },
 ];
 
-export function Footer() {
+const Footer = () => {
   return (
     <footer className="bg-gray-900 py-6 mt-12">
       <div className="mx-auto max-w-7xl px-6 md:flex md:items-center md:justify-between lg:px-8">
@@ -38,3 +40,5 @@ export function Footer() {
     </footer>
   );
 }
+
+export default Footer;
